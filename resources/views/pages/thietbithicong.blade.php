@@ -2,7 +2,7 @@
 @section('pagdeName', 'Thiết Bị Thi Công')
 @section('slider')
     <!-- Carousel Start -->
-    @include("module.PageHeader")
+    @include("module.pageHeader")
     <!-- Carousel End -->
 @endsection
 @section("content")
@@ -105,21 +105,7 @@
                       </tr>
                     </tbody>
                   </table>
-                  <nav aria-label="...">
-                    <ul class="pagination justify-content-end">
-                      <li class="page-item">
-                        <a class="page-link">Previous</a>
-                      </li>
-                      <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                      <li class="page-item " aria-current="page">
-                        <a class="page-link" href="#">2 <span class="visually-hidden">(current)</span></a>
-                      </li>
-                      <li class="page-item"><a class="page-link" href="#">3</a></li>
-                      <li class="page-item">
-                        <a class="page-link" href="#">Next</a>
-                      </li>
-                    </ul>
-                  </nav>
+                 
             </div>
       </div>
 
@@ -156,28 +142,28 @@
             </a>
           </div>
           <div class="col-md-3">
-            <a href="https://unsplash.it/1200/768.jpg?image=251" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4">
-              <img src="https://unsplash.it/600.jpg?image=251" class="img-fluid content">
+            <a href="https://cdn.pixabay.com/photo/2014/08/13/00/28/tipper-417147_1280.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4">
+              <img src="https://cdn.pixabay.com/photo/2014/08/13/00/28/tipper-417147_1280.jpg" class="img-fluid content">
             </a>
           </div>
           <div class="col-md-3">
-            <a href="https://unsplash.it/1200/768.jpg?image=251" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4">
-              <img src="https://unsplash.it/600.jpg?image=251" class="img-fluid content">
+            <a href="https://cdn.pixabay.com/photo/2015/08/29/00/55/caterpillar-912680_1280.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4">
+              <img src="https://cdn.pixabay.com/photo/2015/08/29/00/55/caterpillar-912680_1280.jpg" class="img-fluid content">
             </a>
           </div>
           <div class="col-md-3">
-            <a href="https://unsplash.it/1200/768.jpg?image=251" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4">
-              <img src="https://unsplash.it/600.jpg?image=251" class="img-fluid content">
+            <a href="https://cdn.pixabay.com/photo/2021/08/22/07/17/road-roller-6564386_1280.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4">
+              <img src="https://cdn.pixabay.com/photo/2021/08/22/07/17/road-roller-6564386_1280.jpg" class="img-fluid content">
             </a>
           </div>
           <div class="col-md-3">
-            <a href="https://unsplash.it/1200/768.jpg?image=251" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4">
-              <img src="https://unsplash.it/600.jpg?image=251" class="img-fluid content">
+            <a href="https://cdn.pixabay.com/photo/2016/05/21/21/31/housebuilding-1407480_1280.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4">
+              <img src="https://cdn.pixabay.com/photo/2016/05/21/21/31/housebuilding-1407480_1280.jpg" class="img-fluid content">
             </a>
           </div>
         </div>
       <div class="row">
-        <button class="btn btn-primary loadMore">Load more</button>
+        <button class="btn btn-primary loadMore">Xem Thêm</button>
         </div>  
       
     </div>

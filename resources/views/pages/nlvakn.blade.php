@@ -113,70 +113,76 @@
                         <p class="card-text">
                             <div class="table-responsive">
                                 <table class="table table-bordered " style="text-align: center">
-                             
+                             {{-- @foreach ($hoso as $value)
+                                 
+                             @endforeach --}}
+                             @foreach ($hoso as $value)
                                   <tbody >
+                                    
                                     <tr>
-                                      <th scope="row">Hợp đồng số : 200/2011/HD-XD</th>
+                                      <th scope="row">Hợp đồng số : {{$value->mahopdong}}</th>
                                       <td scope="row">Mô tả hợp đồng</td>
-                                      <td colspan="2">Thi công xây dựng công trình:
-
-                                        Đường giao thông Trà Giác - Trà Giáp - Trà Ka</td>
+                                      <td colspan="2">{{$value->tenhopdong}}</td>
                                 
                                     </tr>
                                     <tr>
                                       <th scope="row">Ngày Ký</th>
-                                      <td>25/10/2021</td>
+                                      <td>{{$value->ngayky}}</td>
                                       <td >Ngày hoàn thành </td>
-                                      <td >26/05/2012</td>
+                                      <td >{{$value->ngayhoanthanh}}</td>
                                     </tr>
                                     <tr>
                                       <th scope="row">Vai trò hợp đồng</th>
-                                      <td>Nhà thầu</td>
-                                      <td>Quản lý nhà thầu</td>
-                                      <td>Nhà thầu phụ</td>
+                                      @if ($value->vaitro ==0)
+                                      <td colspan="3">Nhà thầu</td>
+                                      @elseif ($value->vaitro ==1)
+                                      <td colspan="3">Quản lý nhà thầu</td>  
+                                      @else
+                                      <td colspan="3">Nhà thầu phụ</td>
+                                      @endif
+                                      
                                     </tr>
                                     <tr>
                                         <th scope="row">Tổng giá trị hợp đồng</th>
                                         <td></td>
-                                        <td colspan="2">13.730.310.000VND</td>
-                                       
+                                        <td colspan="2">{{number_format($value->total,0,'','.')}}VND</td>
+
                                       </tr>
                                       <tr>
                                         <th scope="row">Nếu là thành viên liên danh hoặc nhà thầu phụ, xác định phần tham gia trong tổng hợp đồng</th>
                                         <td >100%</td>
-                                        <td colspan="2">Tổng giá trị 13.730.310,000VND</td>
+                                        <td colspan="2">Tổng giá trị :{{number_format($value->total,0,'','.')}}VND</td>
                                        
                                       </tr>
                                       <tr>
                                         <th scope="row">Tên chủ đầu tư</th>
-                                        <td colspan="3">BOL các DA ĐTXD huyện Bắc Trà My</td>
+                                        <td colspan="3">{{$value->tenchudautu}}</td>
                                       </tr>
                                       <tr>
                                         <th scope="row">Địa chỉ</th>
-                                        <td colspan="3">Thị trấn Trà My, huyện Bắc Trà My, tỉnh Quảng Nam</td>
+                                        <td colspan="3">{{$value->diachi}}</td>
                                       </tr>
                                       <tr>
                                         <th scope="row">Điện Thoại</th>
-                                        <td colspan="3">0510 3882 120</td>
+                                        <td colspan="3">{{$value->dienthoai}}</td>
                                       </tr>
                                       <tr>
                                         <th scope="row">Số Fax</th>
-                                        <td colspan="3">0510 3882 979</td>
+                                        <td colspan="3">{{$value->fax}}</td>
                                       </tr>
                                       <tr>
                                         <th scope="row">Email</th>
-                                        <td colspan="3"></td>
+                                        <td colspan="3">{{$value->email}}</td>
                                       </tr>
                                       <tr>
                                         <th scope="row">Mô tả công việc đã làm :</th>
                                         <td colspan="3">
 
-                                            - Một đường BTXM dày 20cm có tổng chiều dài L= 231,8m +Tường chắn taluy âm tổng chiều dài L=132,34m
-                                            
-                                            +Tường chắn taluy dương có tổng chiều dài L=276m</td>
+                                            {{$value->mota}}</td>
                                       </tr>
                                   </tbody>
-                              
+                                  
+                                
                                 </table>
                                 
                               </div>
@@ -185,39 +191,22 @@
                     </div>
                     <!-- Gallery -->
                     <div class="row">
+                        @foreach (json_decode($value->image_url) as $image )
                         <div class="col-lg-6 col-md-12 mb-4 mb-lg-0">
-                            <img src="front_end/img/anhdauthau.png" class="w-100 shadow-1-strong rounded mb-4"
+                            <img src="http://127.0.0.1:8000/public/upload/product/{{$image}}" class="w-100 shadow-1-strong rounded mb-4"
                                 alt="Boat on Calm Water" />
                         </div>
-                        <div class="col-lg-6 col-md-12 mb-4 mb-lg-0">
-                            <img src="front_end/img/anhdauthau1.png" class="w-100 shadow-1-strong rounded mb-4"
-                                alt="Wintry Mountain Landscape" />
-                        </div>
-                        <div class="col-lg-6 col-md-12 mb-4 mb-lg-0">
-                            <img src="front_end/img/anhdauthau2.png" class="w-100 shadow-1-strong rounded mb-4"
-                                alt="Wintry Mountain Landscape" />
-                        </div>
-                        <div class="col-lg-6 col-md-12 mb-4 mb-lg-0">
-                            <img src="front_end/img/anhdauthau3.png" class="w-100 shadow-1-strong rounded mb-4"
-                                alt="Wintry Mountain Landscape" />
-                        </div>
+                                  @endforeach
+                        
+                       
                     </div>
+                    @endforeach
                 </div>
                 <!-- Gallery -->
             </div>
             <nav aria-label="...">
                 <ul class="pagination justify-content-end">
-                  <li class="page-item">
-                    <a class="page-link">Previous</a>
-                  </li>
-                  <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                  <li class="page-item " aria-current="page">
-                    <a class="page-link" href="#">2 <span class="visually-hidden">(current)</span></a>
-                  </li>
-                  <li class="page-item"><a class="page-link" href="#">3</a></li>
-                  <li class="page-item">
-                    <a class="page-link" href="#">Next</a>
-                  </li>
+                    {{$hoso->links()}}
                 </ul>
               </nav>
         </div>

@@ -6,7 +6,7 @@
    <div class="container ">
      <div class="row">
        <div class="col-lg-4 col-md-6">
-        <img src="front_end/img/logo.png" width="150px" height="150px" > 
+        <img src="http://127.0.0.1:8000/public/upload/product/{{$lienhe->logo}}" width="150px" height="150px" > 
          <h3 class="text-white ">
       
         NGHĨA THÀNH
@@ -32,10 +32,10 @@
        <div class="col-lg-4 col-md-6">
          <h4 class="text-light mb-4">Địa Chỉ</h4>
          <p>
-           <i class="fa fa-map-marker-alt me-3"></i>Thôn Dương Thạnh, Xã Trà Dương, Huyện Bắc Trà My, Tỉnh Quảng Nam
+           <i class="fa fa-map-marker-alt me-3"></i>{{$lienhe->diachi}}
          </p>
-         <p><i class="fa fa-phone-alt me-3"></i>84.0235.3879.579</p>
-         <p><i class="fa fa-envelope me-3"></i>nghiathanhqna@gmail.com</p>
+         <p><i class="fa fa-phone-alt me-3"></i>{{$lienhe->phone}}</p>
+         <p><i class="fa fa-envelope me-3"></i>{{$lienhe->email}}</p>
        </div>
        <div class="col-lg-4 col-md-6">
          <h4 class="text-light mb-4">Truy cập nhanh</h4>
@@ -76,6 +76,7 @@
  <!-- JavaScript Libraries -->
  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+ <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
  <script src="{{asset('front_end/lib/wow/wow.min.js')}}"></script>
  <script src="{{asset('front_end/lib/easing/easing.min.js')}}"></script>
  <script src="{{asset('front_end/lib/waypoints/waypoints.min.js')}}"></script>
@@ -104,6 +105,19 @@
   });
   
 })
+</script>
+<script>
+  $(".call-buton").click(function (e) { 
+    e.preventDefault();
+    Swal.fire({
+ title: '<a href="tel:05103879579">05103879579</a>', 
+  iconHtml: '<i class="fa fa-phone text-primary"></i>',
+  confirmButtonColor: '#FDA12B',
+  customClass: {
+    icon : 'no-border'
+  }
+})
+  });
 </script>
 </body>
 </html>

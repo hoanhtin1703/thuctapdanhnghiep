@@ -81,76 +81,7 @@
 
 <!-- About End -->
 
-<!-- Facts Start -->
-{{-- <div class="container-fluid my-5 p-0">
-      <div class="row g-0">
-        <div class="col-xl-3 col-sm-6 wow fadeIn" data-wow-delay="0.1s">
-          <div class="position-relative">
-            <img class="img-fluid w-100" src="img/fact-1.jpg" alt="" />
-            <div class="facts-overlay">
-              <h1 class="display-1">01</h1>
-              <h4 class="text-white mb-3">Construction</h4>
-              <p class="text-white">
-                Aliqu diam amet diam et eos erat ipsum lorem stet lorem sit
-                clita duo justo erat amet
-              </p>
-              <a class="text-white small" href=""
-                >READ MORE<i class="fa fa-arrow-right ms-3"></i
-              ></a>
-            </div>
-          </div>
-        </div>
-        <div class="col-xl-3 col-sm-6 wow fadeIn" data-wow-delay="0.3s">
-          <div class="position-relative">
-            <img class="img-fluid w-100" src="img/fact-2.jpg" alt="" />
-            <div class="facts-overlay">
-              <h1 class="display-1">02</h1>
-              <h4 class="text-white mb-3">Mechanical</h4>
-              <p class="text-white">
-                Aliqu diam amet diam et eos erat ipsum lorem stet lorem sit
-                clita duo justo erat amet
-              </p>
-              <a class="text-white small" href=""
-                >READ MORE<i class="fa fa-arrow-right ms-3"></i
-              ></a>
-            </div>
-          </div>
-        </div>
-        <div class="col-xl-3 col-sm-6 wow fadeIn" data-wow-delay="0.5s">
-          <div class="position-relative">
-            <img class="img-fluid w-100" src="img/fact-3.jpg" alt="" />
-            <div class="facts-overlay">
-              <h1 class="display-1">03</h1>
-              <h4 class="text-white mb-3">Architecture</h4>
-              <p class="text-white">
-                Aliqu diam amet diam et eos erat ipsum lorem stet lorem sit
-                clita duo justo erat amet
-              </p>
-              <a class="text-white small" href=""
-                >READ MORE<i class="fa fa-arrow-right ms-3"></i
-              ></a>
-            </div>
-          </div>
-        </div>
-        <div class="col-xl-3 col-sm-6 wow fadeIn" data-wow-delay="0.7s">
-          <div class="position-relative">
-            <img class="img-fluid w-100" src="img/fact-4.jpg" alt="" />
-            <div class="facts-overlay">
-              <h1 class="display-1">04</h1>
-              <h4 class="text-white mb-3">Interior Design</h4>
-              <p class="text-white">
-                Aliqu diam amet diam et eos erat ipsum lorem stet lorem sit
-                clita duo justo erat amet
-              </p>
-              <a class="text-white small" href=""
-                >READ MORE<i class="fa fa-arrow-right ms-3"></i
-              ></a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div> --}}
-<!-- Facts End -->
+
 
 <!-- Features Start -->
 <div class="container-xxl py-5">
@@ -235,21 +166,24 @@
       </div>
     </div>
     <div class="row g-4 justify-content-center">
+      @foreach ($tintuc as $value )
       <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
         <div class="service-item bg-light overflow-hidden h-100">
-          <img class="img-fluid" src="https://dauthau.asia/uploads/news/2022_08/mot-nha-thau-co-the-tham-gia-nhieu-goi-thau-cung-luc-duoc-khong.png" alt="" />
+          <img class="img-fluid" src="http://127.0.0.1:8000/public/upload/product/{{$value->image_url}}" alt="" />
           <div class="service-text position-relative text-center h-100 p-4">
-            <h5 class="mb-3">Một nhà thầu có thể tham gia nhiều gói thầu cùng lúc được không?</h5>
+            <h5 class="mb-3">{{$value->topic}}?</h5>
             <p>
-              Đấu thầu là quá trình lựa chọn nhà thầu để tham gia thực hiện các yêu cầu/ đề nghị của chủ đầu tư. Vậy một nhà thầu ...
+              {{$value->sub_content}}
             </p>
-            <a class="small" href=""
+            <a class="small" href="{{url('detail-tintuc/'.$value->id.'')}}"
               >Xem thêm<i class="fa fa-arrow-right ms-3"></i
             ></a>
           </div>
         </div>
       </div>
-      <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+      @endforeach
+     
+      {{-- <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
         <div class="service-item bg-light overflow-hidden h-100">
           <img class="img-fluid" src="https://dauthau.asia/uploads/news/2022_08/thong-tu-10-ve-lua-chon-nha-dau-tu-qua-mang.jpg" alt="" />
           <div class="service-text position-relative text-center h-100 p-4">
@@ -276,7 +210,7 @@
             ></a>
           </div>
         </div>
-      </div>
+      </div> --}}
 
     </div>
  
@@ -305,31 +239,31 @@
           <div class="row g-3">
             <div class="col-sm-6">
               <div class="form-floating">
-                <input type="text" class="form-control bg-dark border-0" id="gname" placeholder="Gurdian Name" />
+                <input type="text" class="form-control bg-light border-0" id="gname" placeholder="Gurdian Name" />
                 <label for="gname">Your Name</label>
               </div>
             </div>
             <div class="col-sm-6">
               <div class="form-floating">
-                <input type="email" class="form-control bg-dark border-0" id="gmail" placeholder="Gurdian Email" />
+                <input type="email" class="form-control bg-light border-0" id="gmail" placeholder="Gurdian Email" />
                 <label for="gmail">Your Email</label>
               </div>
             </div>
             <div class="col-sm-6">
               <div class="form-floating">
-                <input type="text" class="form-control bg-dark border-0" id="cname" placeholder="Child Name" />
+                <input type="text" class="form-control bg-light border-0" id="cname" placeholder="Child Name" />
                 <label for="cname">Your Mobile</label>
               </div>
             </div>
             <div class="col-sm-6">
               <div class="form-floating">
-                <input type="text" class="form-control bg-dark border-0" id="cage" placeholder="Child Age" />
+                <input type="text" class="form-control bg-light border-0" id="cage" placeholder="Child Age" />
                 <label for="cage">Service Type</label>
               </div>
             </div>
             <div class="col-12">
               <div class="form-floating">
-                <textarea class="form-control bg-dark border-0" placeholder="Leave a message here" id="message"
+                <textarea class="form-control bg-light border-0" placeholder="Leave a message here" id="message"
                   style="height: 100px"></textarea>
                 <label for="message">Message</label>
               </div>
@@ -345,6 +279,7 @@
     </div>
   </div>
 </div>
+
 <!-- Appointment End -->
 
 <!-- Testimonial Start -->

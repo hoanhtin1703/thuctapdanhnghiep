@@ -12,6 +12,7 @@
     <link href="img/favicon.ico" rel="icon" />
 
     <!-- Google Web Fonts -->
+    
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -39,6 +40,7 @@
 
     <!-- Template Stylesheet -->
     <link href="{{asset('front_end/css/style.css')}}" rel="stylesheet" />
+    
   </head>
 
   <body>
@@ -96,7 +98,7 @@
     >
       <a href="index.html" class="navbar-brand d-flex align-items-center">
         <h2 class="m-0">
-          <img src="front_end/img/logo.png" width="100px" height="60px" alt="" />NGHĨA THÀNH
+          <img src="http://127.0.0.1:8000/public/upload/product/{{$lienhe->logo}}" width="100px" height="60px" alt="" />NGHĨA THÀNH
         </h2>
       </a>
       <button
@@ -109,9 +111,9 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <div class="navbar-nav ms-auto py-3 py-lg-0">
-          <a href="index.html" class="nav-item nav-link active">TRANG CHỦ</a>
-          <a href="about.html" class="nav-item nav-link">VỀ CHÚNG TÔI</a>
-          <a href="service.html" class="nav-item nav-link">TIN TỨC</a>
+          <a href="{{url('/')}}" class="nav-item nav-link active">TRANG CHỦ</a>
+          <a href="{{url('/about')}}" class="nav-item nav-link">VỀ CHÚNG TÔI</a>
+          <a href="{{url('/tintuc')}}" class="nav-item nav-link">TIN TỨC</a>
           <div class="nav-item dropdown">
             <a
               href="#"
@@ -121,15 +123,15 @@
             >
             <div class="dropdown-menu bg-light m-0">
              
-              <a href="hsphaply.html" class="dropdown-item">Hồ SƠ PHÁP LÝ</a>
-              <a href="testimonial.html" class="dropdown-item">NĂNG LỰC TÀI CHÍNH</a>
-              <a href="hsnhanluc.html" class="dropdown-item">NĂNG LỰC NHÂN SỰ</a>
-              <a href="team.html" class="dropdown-item">THIẾT BỊ THI CÔNG </a>
-              <a href="testimonial.html" class="dropdown-item">NĂNG LỰC & KINH NGHIỆM</a>
+              <a href="{{url('/hsphaply')}}" class="dropdown-item">Hồ SƠ PHÁP LÝ</a>
+              <a href="{{url('/nltaichinh')}}" class="dropdown-item">NĂNG LỰC TÀI CHÍNH</a>
+              <a href="{{url('/hsnhanluc')}}" class="dropdown-item">NĂNG LỰC NHÂN SỰ</a>
+              <a href="{{url('/thietbithicong')}}" class="dropdown-item">THIẾT BỊ THI CÔNG </a>
+              <a href="{{url('/nanglucvakinhnghiem')}}" class="dropdown-item">NĂNG LỰC & KINH NGHIỆM</a>
             
             </div>
           </div>
-          <a href="contact.html" class="nav-item nav-link">LIÊN HỆ</a>
+          <a href="{{url('/contact')}}" class="nav-item nav-link">LIÊN HỆ</a>
         </div>
       </div>
     </nav>
