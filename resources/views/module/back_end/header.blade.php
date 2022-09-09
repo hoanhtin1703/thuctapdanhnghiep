@@ -10,7 +10,7 @@
   <meta name="author" content="">
 
   <meta name="csrf-token" content="{{ csrf_token() }}" />
-  <title>SB Admin 2 - Dashboard</title>
+  <title>Nghĩa Thành Company</title>
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
